@@ -1,4 +1,4 @@
-
+package main;
 
 public interface HeartModelInterface {
 	int getHeartRate();
