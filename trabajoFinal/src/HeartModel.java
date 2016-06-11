@@ -1,5 +1,3 @@
-
-
 import java.util.*;
 
 public class HeartModel implements HeartModelInterface, Runnable {
@@ -9,11 +7,26 @@ public class HeartModel implements HeartModelInterface, Runnable {
     int bpm = 90;
 	Random random = new Random(System.currentTimeMillis());
 	Thread thread;
+	private static HeartModel uniqueInstance=null;	
+	static int CantInstance= 0;
 
+	//cambiar a private cuando solucione el interfaz
 	public HeartModel() {
 		thread = new Thread(this);
 		thread.start();
 	}
+	//Aggregate
+	public static HeartModel getInstance(){
+		if (uniqueInstance==null){
+			uniqueInstance= new HeartModel();
+		}
+		CantInstance++;
+		return uniqueInstance;
+	}
+	public static int getCantInstance(){
+		return CantInstance;
+	}
+	//fin aggregate
 
 	public void run() {
 		int lastrate = -1;
