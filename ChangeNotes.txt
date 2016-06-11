@@ -1,0 +1,19 @@
+Versión: V0.1
+
+Autor:Fabian Wolfmann
+
+Características Añadidas:
+
+Característica 1: Clase HeartModel es modificada para que tenga caracteristica Singleton.
+
+Característica 2: Al precionar el boton de >> del view se quiere instanciar una vez mas.
+
+Característica 3:La cantidad de veces instanciada se muestra en el BeatBar.
+
+Errores Arreglados:
+
+Error 1:-----
+
+Error 2:-----
+
+Comentarios:Se crea un HeartView, que hereda de DJView pero le hace un override al Update para que salga el mensaje de Veces instanciado.
