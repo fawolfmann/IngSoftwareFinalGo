@@ -22,7 +22,7 @@ public class HeartController implements ControllerInterface {
 	
     //metodo modificado
 	public void increaseBPM() {
-		HeartModel.getInstance();		
+		HeartModel.getInstance();
 	}
     
 	public void decreaseBPM() {}
