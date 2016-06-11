@@ -1,4 +1,4 @@
-
+package main;
 public class TempoAdapter implements BeatModelInterface {
 	TempoModelInterface temporizador;
 	

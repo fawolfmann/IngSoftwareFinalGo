@@ -1,4 +1,4 @@
-
+package main;
   
 public interface BeatModelInterface {
 	void initialize();

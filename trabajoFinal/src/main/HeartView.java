@@ -1,4 +1,4 @@
-
+package main;
 public class HeartView extends DJView {
 
 	public HeartView(ControllerInterface controller, BeatModelInterface model) {

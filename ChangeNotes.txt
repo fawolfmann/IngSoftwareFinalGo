@@ -1,3 +1,21 @@
+﻿Version: V0.2
+Autor: Nicolas Passaglia, Agustin Colazo
+Características Añadidas:
+
+Característica 1: Se crean las clases correspondientes para el Temporizador (TempoController, TempoModel, TempoModelInterface, TempoAdapter)
+Característica 2: Se agregan sonidos
+
+Característica 3: Se implementa con la DJVIEW
+
+Errores Arreglados:
+
+Error 1:-----
+
+Error 2:-----
+
+
+---------------------------------------------------------------------------
+
 Versión: V0.1
 
 Autor:Fabian Wolfmann
@@ -17,3 +35,4 @@ Error 1:-----
 Error 2:-----
 
 Comentarios:Se crea un HeartView, que hereda de DJView pero le hace un override al Update para que salga el mensaje de Veces instanciado.
+

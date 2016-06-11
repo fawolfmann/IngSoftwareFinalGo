@@ -1,4 +1,4 @@
-
+package main;
   
 public class BeatController implements ControllerInterface {
 	BeatModelInterface model;

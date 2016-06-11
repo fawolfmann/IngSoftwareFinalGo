@@ -1,4 +1,4 @@
-
+package main;
 public class TempoController implements ControllerInterface {
 	static TempoModelInterface tempomodel;
 	DJView view;

@@ -1,4 +1,4 @@
-
+package main;
 public interface TempoModelInterface  {
 	int getSegundos();
 	void setSegundos(int segundos);

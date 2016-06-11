@@ -1,7 +1,13 @@
+package main;
+
+
 import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.ArrayList;
-import sun.audio.*;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
 public class TempoModel implements TempoModelInterface,Runnable{
 	ArrayList beatObservers = new ArrayList();
 	ArrayList bpmObservers = new ArrayList();
@@ -82,24 +88,48 @@ public class TempoModel implements TempoModelInterface,Runnable{
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		while(true){
-			while (SegundosActuales!=0){
-				if(SegundosActuales==10){
-					/* InputStream inputStream = getClass().getResourceAsStream(SOUND_FILENAME);
-					    AudioStream audioStream = new AudioStream(inputStream);
-					    AudioPlayer.player.start(audioStream);*/
+		while(SegundosActuales != 0){
+			switch(SegundosActuales){
+			case 10:
+					reproducir("/main/resources/sounds/10seconds.wav");
+					  
+					break;
+			case 30:
+				
+					reproducir("/main/resources/sounds/30seconds.wav");
+					
+					break;
+			case 5:
+					reproducir("/main/resources/sounds/5seconds.wav");
 				}
-				try{
+			
+				try{	
 					Thread.sleep(1000);
 					SegundosActuales--;
 					notifyBeatObservers();
 					notifyBPMObservers();
 				}catch(Exception e){
 				}
+				
 			}
-			System.out.println("The bomb has been defused");
+		reproducir("/main/resources/sounds/begins.wav");
 		}
+	public void reproducir(String audioPath){
+		try
+		  {
+			  AudioInputStream audioInputStream =AudioSystem.getAudioInputStream(this.getClass().getResource(audioPath));
+			     Clip clip = AudioSystem.getClip();
+			     clip.open(audioInputStream);
+			     clip.start( );
+		  }
+		  catch (Exception e)
+		  {
+		    // a special way i'm handling logging in this application
+		   e.printStackTrace();
+		  }
+		
+	}
 
 	}
 
-}
+
