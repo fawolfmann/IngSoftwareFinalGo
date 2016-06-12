@@ -11,17 +11,24 @@ import javax.sound.sampled.Clip;
 public class TempoModel implements TempoModelInterface,Runnable{
 	ArrayList beatObservers = new ArrayList();
 	ArrayList bpmObservers = new ArrayList();
+	ArrayList<String> preguntas = new ArrayList<String>();
 	private static TempoModel uniqueInstance=null;	
 	static int SegundosTotales=0;
 	static int SegundosActuales=0;
 	Thread thread;
 	
-	public TempoModel(){
+	private TempoModel(){
 		thread = new Thread(this);
-		
+		agregarPreguntas();
+	
 	}
 	
-	
+	private void agregarPreguntas(){
+		preguntas.add("El problema consiste en un hombre ciego, que debe tomar tres pastillas de distinto color por dia para vivr, estas son exactamente iguales al tacto y al olfato. El hombre tiene guardadas sus pantillas en frascos de 6, donde hay dos de cada color. \u00BFComo hace para no morir?");
+		preguntas.add("hola");
+		preguntas.add("cholax");
+		preguntas.add("fabio");
+	}
 	public static TempoModel getInstance(){
 		if (uniqueInstance==null){
 			uniqueInstance= new TempoModel();
@@ -127,6 +134,19 @@ public class TempoModel implements TempoModelInterface,Runnable{
 		    // a special way i'm handling logging in this application
 		   e.printStackTrace();
 		  }
+		
+	}
+
+
+	@Override
+	public void mostrarPregunta(int pregunta) {
+		// TODO Auto-generated method stub
+		switch(pregunta){
+		case 1:
+			
+		
+		
+		}
 		
 	}
 
