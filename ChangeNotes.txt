@@ -1,4 +1,19 @@
-﻿Version: V0.2
+﻿Version: V0.3
+Autor: Nicolas Passaglia, Agustin Colazo
+Características Añadidas:
+
+Ninguna.
+
+Errores Arreglados:
+
+Error 1: Se hizo privado el constructor de la clase HeartModel (Singleton)
+
+Error 2: Ahora cada vez que se intenta instanciar un nuevo HeartModel, esto actualiza a la vista BeatBar
+para que muestre la cantidad de veces que se intento  instanciar un objeto de dicha clase.
+
+
+---------------------------------------------------------------------------
+Version: V0.2
 Autor: Nicolas Passaglia, Agustin Colazo
 Características Añadidas:
 
@@ -26,7 +41,7 @@ Característica 1: Clase HeartModel es modificada para que tenga caracteristica 
 
 Característica 2: Al precionar el boton de >> del view se quiere instanciar una vez mas.
 
-Característica 3:La cantidad de veces instanciada se muestra en el BeatBar.
+Característica 3: La cantidad de veces instanciada se muestra en el BeatBar.
 
 Errores Arreglados:
 
