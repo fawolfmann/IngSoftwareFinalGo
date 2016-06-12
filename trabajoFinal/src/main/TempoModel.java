@@ -11,17 +11,34 @@ import javax.sound.sampled.Clip;
 public class TempoModel implements TempoModelInterface,Runnable{
 	ArrayList beatObservers = new ArrayList();
 	ArrayList bpmObservers = new ArrayList();
-	private static TempoModel uniqueInstance=null;	
+	ArrayList tempoObservers = new ArrayList();
+	String[] preguntas = new String[4];
+	String[] respuestas = new String[4];
+	public static TempoModel uniqueInstance=null;	
 	static int SegundosTotales=0;
 	static int SegundosActuales=0;
 	Thread thread;
-	
-	public TempoModel(){
-		thread = new Thread(this);
+	private int respuesta = 0;
+	private TempoModel(){
 		
+		agregarPreguntas();
+		agregarRespuestas();
+	
 	}
 	
+	private void agregarPreguntas(){
+		preguntas[0]="El problema consiste en un hombre ciego, que debe tomar tres pastillas de distinto color por dia para vivr, estas son exactamente iguales al tacto y al olfato. El hombre tiene guardadas sus pantillas en frascos de 6, donde hay dos de cada color. \u00BFComo hace para no morir?";
+		preguntas[1]="Hay tres cajas, una contiene manzanas, otra naranjas y la otra tiene tanto naranjas como manzanas. El problema es que las etiquetas estan las 3 mal puestas. ¿Como podes etiquetar bien las cajas sacando una sola fruta y viendola?";
+		preguntas[2]="Cuatro individuos llegan a un río en la noche. Hay un puente estrecho, pero este sólo soporta a dos personas a la vez. Los individuos tienen una antorcha, y debido a que es de noche, deben utilizar la antorcha cuando cruzan el puente, por lo tanto, si cruzan dos personas, uno debe volver atrás llevando la antorcha para que puedan cruzar los demás. El individuo A puede cruzar el puente en un minuto, el individuo B en dos minutos, el individuo C en cinco minutos, y el individuo D en ocho minutos. Cuando dos individuos cruzan el puente juntos, tardan lo que tarda el más lento de ellos. El problema es: ¿Pueden cruzar todos el puente en quince minutos o menos?";
+		preguntas[3]="Tenemos 12 monedas, una de ellas es falsa y tiene un peso diferente al de las demas. ¿Como utilizando una balanza, y solo 3 pesadas se puede determinar cual es la falsa y si es mas o menos pesada?";
+	}
+	private void agregarRespuestas(){
+		respuestas[0]="La solucion consiste en partir las pastillas a la mitad, al partir el ciego deja una mitad en el frasco y se toma la otra mitad";
+		respuestas[1]="Como sabemos que todas las etiquetas estan cambiadas. Miramos la que tiene la etiqueta Mixta, sabremos que la caja corresponde a la fruta que saquemos ya que esta no puede ser la caja mixta. Luego, le ponemos la etiqueta correspondiente y a las otras dos cajas les intercambiamos las etiquetas restantes.";
+		respuestas[2]="Primero cruzan A y B, luego vuelve A con la antorcha. Cruzan C y D, y luego vuelve B con la antorcha. Finalmente, cruzan A y B.";
+		respuestas[3]="CONSULTAR";
 	
+	}
 	public static TempoModel getInstance(){
 		if (uniqueInstance==null){
 			uniqueInstance= new TempoModel();
@@ -40,6 +57,7 @@ public class TempoModel implements TempoModelInterface,Runnable{
 		// TODO Auto-generated method stub
 		SegundosTotales = segundos;
 		SegundosActuales = SegundosTotales;
+		thread = new Thread(this);
 		thread.start();
 	}
 
@@ -57,7 +75,17 @@ public class TempoModel implements TempoModelInterface,Runnable{
 			beatObservers.remove(i);
 		}
 	}
-
+	@Override
+	public void registerObserver(TempoObserver o ){
+		tempoObservers.add(o);
+	}
+	public void removeObserver(TempoObserver o) {
+		// TODO Auto-generated method stub
+		int i = tempoObservers.indexOf(o);
+		if (i >= 0) {
+			tempoObservers.remove(i);
+		}
+	}
 	@Override
 	public void registerObserver(BPMObserver o) {
 		// TODO Auto-generated method stub
@@ -84,7 +112,14 @@ public class TempoModel implements TempoModelInterface,Runnable{
 			observer.updateBPM();
 		}
 	}
-
+	
+	public void notifyTEMPOObservers(String a) {
+		for(int i = 0; i < tempoObservers.size(); i++) {
+			TempoObserver observer = (TempoObserver)tempoObservers.get(i);
+			observer.updateTempo(a);
+		}
+	}
+	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
@@ -113,6 +148,17 @@ public class TempoModel implements TempoModelInterface,Runnable{
 				
 			}
 		reproducir("/main/resources/sounds/begins.wav");
+		notifyTEMPOObservers(respuestas[respuesta]);
+		
+		/*try{	
+			Thread.sleep(10000);
+			uniqueInstance = null;
+			TempoModel tempomodel = TempoModel.getInstance();
+	        ControllerInterface model = new TempoController(tempomodel);
+		
+		}catch(Exception e){
+		}
+		*/
 		}
 	public void reproducir(String audioPath){
 		try
@@ -127,6 +173,34 @@ public class TempoModel implements TempoModelInterface,Runnable{
 		    // a special way i'm handling logging in this application
 		   e.printStackTrace();
 		  }
+		
+	}
+
+
+	@Override
+	public void mostrarPregunta(int pregunta) {
+		// TODO Auto-generated method stub
+		switch(pregunta){
+		case 0:
+			notifyTEMPOObservers(preguntas[pregunta]);
+			respuesta=pregunta;
+			break;
+		case 1:
+			notifyTEMPOObservers(preguntas[pregunta]);
+			respuesta=pregunta;
+			break;
+		
+		case 2:
+			notifyTEMPOObservers(preguntas[pregunta]);
+			respuesta=pregunta;
+			break;
+			
+		case 3:
+			notifyTEMPOObservers(preguntas[pregunta]);
+			respuesta=pregunta;
+			break;
+		
+		}
 		
 	}
 

@@ -6,5 +6,7 @@ public interface TempoModelInterface  {
 	void removeObserver(BeatObserver o);
 	void registerObserver(BPMObserver o);
 	void removeObserver(BPMObserver o);
+	void registerObserver(TempoObserver o );
+	void mostrarPregunta(int pregunta);
 	
 }

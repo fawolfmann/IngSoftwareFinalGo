@@ -1,4 +1,21 @@
-﻿Version: V0.3
+﻿Version: V0.4
+Autor: Passaglia Nicolas, Colazo Agustin, Wolfmann Fabian
+Características Añadidas:
+
+Caracteristica 1: Se añade la nueva vista que implementa nuestro modelo de temporizador
+Caracteristica 2: Se modifico el modelo y el controlador
+Caracteristica 3: Se implementa la interfaz de TempoObservers
+
+Errores Arreglados:
+
+Ninguno
+
+Comentarios: El juego funciona a la perfeccion con tiempo y sonidos
+
+
+---------------------------------------------------------------------------
+
+Version: V0.3
 Autor: Agustin Colazo
 Características Añadidas:
 

@@ -1,0 +1,77 @@
+package main;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.JTextPane;
+
+public class TempoView {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TempoView window = new TempoView();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public TempoView() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 504, 340);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		final JTextPane txtpnElProblemaConsiste= new JTextPane();;
+		JButton btnNewButton = new JButton("Pregunta 1");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txtpnElProblemaConsiste.setVisible(true);
+			}
+		});
+
+		btnNewButton.setBounds(36, 43, 132, 48);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Pregunta 2");
+		btnNewButton_1.setBounds(306, 43, 147, 48);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Pregunta 3");
+		btnNewButton_2.setBounds(36, 187, 132, 48);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Pregunta 4");
+		btnNewButton_3.setBounds(306, 187, 147, 48);
+		frame.getContentPane().add(btnNewButton_3);
+		
+		
+		txtpnElProblemaConsiste.setVisible(false);
+		txtpnElProblemaConsiste.setText("El problema consiste en un hombre ciego, que debe tomar tres pastillas de distinto color por dia para vivr, estas son exactamente iguales al tacto y al olfato. El hombre tiene guardadas sus pantillas en frascos de 6, donde hay dos de cada color. \u00BFComo hace para no morir?");
+		txtpnElProblemaConsiste.setBounds(116, 91, 271, 89);
+		frame.getContentPane().add(txtpnElProblemaConsiste);
+	}
+}
