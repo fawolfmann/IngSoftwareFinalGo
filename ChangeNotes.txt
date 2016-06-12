@@ -1,5 +1,5 @@
 ﻿Version: V0.3
-Autor: Nicolas Passaglia, Agustin Colazo
+Autor: Agustin Colazo
 Características Añadidas:
 
 Ninguna.
