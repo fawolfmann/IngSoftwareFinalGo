@@ -13,12 +13,17 @@ import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.Font;
 
-public class TempoView {
+public class TempoView implements TempoObserver{
 	
 	private JFrame frame;
 	static public boolean huboClick = false;
 	static public TempoController controler;
 	static public TempoModelInterface model;
+	final JTextPane txtpnElProblemaConsiste= new JTextPane();
+	final JButton btnNewButton = new JButton("Pregunta 1");
+	final JButton btnNewButton_1 = new JButton("Pregunta 2");
+	final JButton btnNewButton_2 = new JButton("Pregunta 3");
+	final JButton btnNewButton_3 = new JButton("Pregunta 4");
 	/**
 	 * Launch the application.
 	 */
@@ -41,6 +46,8 @@ public class TempoView {
 	public TempoView(TempoController controler, TempoModelInterface model) {
 		this.controler = controler;
 		this.model  = model;
+		model.registerObserver((TempoObserver)this);
+		
 		initialize();
 	
 	
@@ -56,38 +63,55 @@ private void initialize(){
 		frame.setBounds(100, 100, 504, 340);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		final JTextPane txtpnElProblemaConsiste= new JTextPane();
-		txtpnElProblemaConsiste.setFont(new Font("Segoe UI", Font.PLAIN, 11));
+		txtpnElProblemaConsiste.setEditable(false);
+		
+		txtpnElProblemaConsiste.setFont(new Font("Segoe UI", Font.PLAIN, 21));
 		txtpnElProblemaConsiste.setForeground(Color.BLACK);
 		txtpnElProblemaConsiste.setBackground(SystemColor.control);;
-		final JButton btnNewButton = new JButton("Pregunta 1");
+		
+	
 		
 
 		btnNewButton.setBounds(36, 43, 132, 48);
 		frame.getContentPane().add(btnNewButton);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controler.mostrar(1);
+			}
+		});
 		
-		final JButton btnNewButton_1 = new JButton("Pregunta 2");
+	
 		btnNewButton_1.setBounds(306, 43, 147, 48);
 		frame.getContentPane().add(btnNewButton_1);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controler.mostrar(2);
+			}
+		});
 		
-		final JButton btnNewButton_2 = new JButton("Pregunta 3");
+		
 		btnNewButton_2.setBounds(36, 187, 132, 48);
 		frame.getContentPane().add(btnNewButton_2);
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controler.mostrar(3);
+			}
+		});
 		
-		final JButton btnNewButton_3 = new JButton("Pregunta 4");
+		
 		btnNewButton_3.setBounds(306, 187, 147, 48);
 		frame.getContentPane().add(btnNewButton_3);
 		
 		
 		txtpnElProblemaConsiste.setVisible(false);
-		txtpnElProblemaConsiste.setText("El problema consiste en un hombre ciego, que debe tomar tres pastillas de distinto color por dia para vivr, estas son exactamente iguales al tacto y al olfato. El hombre tiene guardadas sus pantillas en frascos de 6, donde hay dos de cada color. \u00BFComo hace para no morir?");
-		txtpnElProblemaConsiste.setBounds(116, 91, 271, 144);
+		txtpnElProblemaConsiste.setBounds(36, 27, 417, 246);
 		frame.getContentPane().add(txtpnElProblemaConsiste);
+		
+		
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controler.mostrar(1);
-				
+				controler.mostrar(0);
 				
 		        }
 		     	
@@ -96,11 +120,11 @@ private void initialize(){
 			
 		});
 	}
-	public void desaparece (JButton boton1,JButton boton2,JButton boton3,JButton boton4){
-		boton1.setVisible(false);
-		boton2.setVisible(false);
-		boton3.setVisible(false);
-		boton4.setVisible(false);
+	public void desaparece (){
+		btnNewButton.setVisible(false);
+		btnNewButton_1.setVisible(false);
+		btnNewButton_2.setVisible(false);
+		btnNewButton_3.setVisible(false);
 		
 	}
 	
@@ -108,5 +132,27 @@ private void initialize(){
 		this.frame.setVisible(bool);
 	}
 
+	@Override
+	public void updateTempo(String a) {
+		// TODO Auto-generated method stub
+		ponerPregunta(a);
+		
+	}
+	public void ponerPregunta(String pregunta){
+		
+		txtpnElProblemaConsiste.setText(pregunta);
+		txtpnElProblemaConsiste.setVisible(true);
+		desaparece();
+	}
+
+	public void restart(){
+		
+		btnNewButton.setVisible(true);
+		btnNewButton_1.setVisible(true);
+		btnNewButton_2.setVisible(true);
+		btnNewButton_3.setVisible(true);
+		txtpnElProblemaConsiste.setVisible(false);
+		
+	}
 	
 }
