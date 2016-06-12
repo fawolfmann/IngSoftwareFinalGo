@@ -12,7 +12,7 @@ public class HeartModel implements HeartModelInterface, Runnable {
 	static int CantInstance= 0;
 
 	//cambiar a private cuando solucione el interfaz
-	public HeartModel() {
+	private HeartModel() {
 		thread = new Thread(this);
 		thread.start();
 	}
