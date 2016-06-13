@@ -5,10 +5,26 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/home/fabian/Documents/Facultad/ing_software/IngSoftwareFinalGo/trabajoFinal"/>
 			<item value="C:\Users\familia colazo\AppData\Desktop\Agustin Colazo\Universidad\4to Ano\Primer Semestre\Repositorios\Software_Final\trabajoFinal"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+			<item value="org.eclipse.ui.workbenchTransfer"/>
+		</list>
+	</section>
+	<section name="ResourceNavigator">
+		<item value="Aggregate for window 1462488172031" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+	<section name="NewWizardAction">
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="371" key="DIALOG_X_ORIGIN"/>
+		<item value="174" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
