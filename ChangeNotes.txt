@@ -1,4 +1,17 @@
-﻿Version: V0.5
+﻿Version: V0.6
+Autor: Colazo Agustin
+Características Añadidas:
+
+Caracteristica 1: Se cambio el nombre del boton para ejecutar MyTempoTestDrive por "Smart!"
+Caracteristica 2: Se modifica el texto en la ventana de Menu.
+
+Errores Arreglados:
+Error 1: Ahora el boton "Smart!" ejecuta el TempoTestDrive.
+
+
+
+---------------------------------------------------------------------------
+Version: V0.5
 Autor: Passaglia Nicolas, Colazo Agustin, Wolfmann Fabian
 Características Añadidas:
 

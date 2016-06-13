@@ -55,7 +55,7 @@ public class Menu {
 		lblSeleccionadorDeModelo.setBounds(100, 11, 231, 29);
 		frame.getContentPane().add(lblSeleccionadorDeModelo);
 
-		JLabel lblSeleccioneElModelo = new JLabel("Seleccione el modelo que quiere utilizar");
+		JLabel lblSeleccioneElModelo = new JLabel("Seleccione el modelo.");
 		lblSeleccioneElModelo.setBounds(140, 121, 191, 14);
 		frame.getContentPane().add(lblSeleccioneElModelo);
 
@@ -67,7 +67,7 @@ public class Menu {
 		btnPulso.setBounds(177, 175, 89, 23);
 		frame.getContentPane().add(btnPulso);
 
-		JButton btnNoEntrar = new JButton("No entrar");
+		JButton btnNoEntrar = new JButton("Smart!");
 		btnNoEntrar.setBounds(335, 175, 89, 23);
 		frame.getContentPane().add(btnNoEntrar);
 
@@ -88,6 +88,17 @@ public class Menu {
 					entroDJTest=true;
 				}
 			}
+			
+		});
+		btnNoEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (!entroDJTest){
+					Thread thread =new Thread(new MyTempoTestDrive());
+					thread.start();
+					entroTempoTest=true;
+				}
+			}
+			
 		});
 	}
 }
