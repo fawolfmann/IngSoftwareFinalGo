@@ -1,4 +1,16 @@
-﻿Version: V0.6
+﻿Version: V0.7
+Autor: Passaglia Nicolas
+Caracterisitcas Añadidas:
+
+-
+Errores Arreglados:
+Error 1: Se arregla el bug que no permitia abrir smart luego de pulsar pulse
+
+------------------------------------------------------------------------
+
+
+
+Version: V0.6
 Autor: Colazo Agustin
 Características Añadidas:
 
