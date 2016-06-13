@@ -1,4 +1,16 @@
-﻿Version: V0.4
+﻿Version: V0.5
+Autor: Passaglia Nicolas, Colazo Agustin, Wolfmann Fabian
+Características Añadidas:
+
+Caracteristica 1: Agregado Menu con botones para ejecutar DJTestDrive, HeartTestDrive y TempoTestDrive.
+
+Errores Arreglados:
+
+Ninguno
+
+
+---------------------------------------------------------------------------
+Version: V0.4
 Autor: Passaglia Nicolas, Colazo Agustin, Wolfmann Fabian
 Características Añadidas:
 
