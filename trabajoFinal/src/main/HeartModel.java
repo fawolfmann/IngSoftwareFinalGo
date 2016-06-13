@@ -20,6 +20,7 @@ public class HeartModel implements HeartModelInterface, Runnable {
 	public static HeartModel getInstance(){
 		if (uniqueInstance==null){
 			uniqueInstance= new HeartModel();
+			
 		}
 		CantInstance++;
 		return uniqueInstance;

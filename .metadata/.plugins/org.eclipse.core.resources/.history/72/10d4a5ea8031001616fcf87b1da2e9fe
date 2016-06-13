@@ -92,7 +92,7 @@ public class Menu {
 		});
 		btnNoEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (!entroTempoTest){
+				if (!entroDJTest){
 					Thread thread =new Thread(new MyTempoTestDrive());
 					thread.start();
 					entroTempoTest=true;
