@@ -1,9 +1,15 @@
 package main;
   
-public class HeartTestDrive {
+public class HeartTestDrive implements Runnable {
 
-    public static void main (String[] args) {
+    public HeartTestDrive() {
+		
+    }
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
 		HeartModel heartModel = HeartModel.getInstance(); 
         ControllerInterface model = new HeartController(heartModel);
-    }
+	}
 }
