@@ -1,10 +1,14 @@
 package main;
-public class MyTempoTestDrive {
-	 public static void main (String[] args) {
-			TempoModel tempomodel = TempoModel.getInstance();
-	        ControllerInterface model = new TempoController(tempomodel);
-	     
-	       
-	    }
+public class MyTempoTestDrive implements Runnable{
+	public MyTempoTestDrive() {
+
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		TempoModel tempomodel = TempoModel.getInstance();
+        ControllerInterface model = new TempoController(tempomodel);
+	}
 
 }
