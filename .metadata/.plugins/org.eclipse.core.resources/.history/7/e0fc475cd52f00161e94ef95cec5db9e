@@ -1,9 +1,0 @@
-
-  
-public class HeartTestDrive {
-
-    public static void main (String[] args) {
-		HeartModel heartModel = HeartModel.getInstance(); //hacer .getInstance() cuando solucione interfaz
-        ControllerInterface model = new HeartController(heartModel);
-    }
-}
