@@ -27,7 +27,7 @@ public class TempoAdapter implements BeatModelInterface {
 	@Override
 	public void setBPM(int bpm) {
 		// TODO Auto-generated method stub
-		
+		this.temporizador.setSegundos(bpm);
 	}
 
 	@Override
