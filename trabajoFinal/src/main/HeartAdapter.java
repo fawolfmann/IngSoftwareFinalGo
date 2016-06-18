@@ -34,4 +34,18 @@ public class HeartAdapter implements BeatModelInterface {
 	public void removeObserver(BPMObserver o) {
 		heart.removeObserver(o);
 	}
+
+	//Esto se modifico.
+	@Override
+	public void notifyBeatObservers() {
+		// TODO Auto-generated method stub
+		((HeartModel)heart).notifyBeatObservers();
+	}
+
+	@Override
+	public void notifyBPMObservers() {
+		// TODO Auto-generated method stub
+		((HeartModel)heart).notifyBPMObservers();
+		
+	}
 }

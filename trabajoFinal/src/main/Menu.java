@@ -15,6 +15,7 @@ public class Menu {
 	boolean entroHeartTest;
 	boolean entroDJTest;
 	boolean entroTempoTest;
+	boolean entroStrategyTest;
 	/**
 	 * Launch the application.
 	 */
@@ -38,6 +39,7 @@ public class Menu {
 		entroHeartTest=false;
 		entroDJTest=false;
 		entroTempoTest=false;
+		entroStrategyTest=false;
 		initialize();
 	}
 
@@ -46,7 +48,7 @@ public class Menu {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 450, 271);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -60,17 +62,31 @@ public class Menu {
 		frame.getContentPane().add(lblSeleccioneElModelo);
 
 		JButton btnCorazon = new JButton("Corazon");
-		btnCorazon.setBounds(22, 175, 89, 23);
+		btnCorazon.setBounds(74, 146, 89, 23);
 		frame.getContentPane().add(btnCorazon);
 
 		JButton btnPulso = new JButton("Pulso");
-		btnPulso.setBounds(177, 175, 89, 23);
+		btnPulso.setBounds(242, 146, 89, 23);
 		frame.getContentPane().add(btnPulso);
 
 		JButton btnNoEntrar = new JButton("Smart!");
-		btnNoEntrar.setBounds(335, 175, 89, 23);
+		btnNoEntrar.setBounds(74, 191, 89, 23);
 		frame.getContentPane().add(btnNoEntrar);
+		
+		JButton btnStrategy = new JButton("Strategy");
+		btnStrategy.setBounds(242, 191, 89, 23);
+		frame.getContentPane().add(btnStrategy);
 
+		btnStrategy.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (!entroStrategyTest){
+					Thread thread =new Thread(new StrategyTestDrive());
+					thread.start();
+					entroStrategyTest=true;
+				}
+			}
+		});
+		
 		btnCorazon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (!entroHeartTest){

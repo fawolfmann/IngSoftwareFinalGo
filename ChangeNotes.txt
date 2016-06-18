@@ -1,4 +1,21 @@
-﻿Version: V0.7
+﻿Version: V0.8
+Autor: Colazo Agustin
+Caracterisitcas Añadidas:
+Caracteristica 1: Se agrego un Strategy Controller y StrategyView. StrategyView hereda de DJView. Esto se hizo
+para poder implementar los tres modelos con la misma vista y cambiar en tiempo de ejecucion.El controlador contiene un ArraLisy
+para tener referencia de los modelos.
+Caracteristica 2: Se modifico la interfaz BeatModelInterface para que contenga los metodos notifyBeatObservers() y notifyBPMObservers().
+Caracteristica 3: Se modifico el TempoAdapter y el HeartAdapter para que implementen los metodos anteriores.
+Caracteristica 4: Se modifico el menu para agregar el boton "Strategy" que inicia el StrategyTestDrive
+Caracteristica 5: Se implemento el StrategyTestDrive
+Caracteristica 6: Se modifico la interfaz TempoModelInterface para que contenga los metodos notifyObservers().
+
+-
+Errores Arreglados:
+Ninguno.
+
+------------------------------------------------------------------------
+Version: V0.7
 Autor: Passaglia Nicolas
 Caracterisitcas Añadidas:
 
