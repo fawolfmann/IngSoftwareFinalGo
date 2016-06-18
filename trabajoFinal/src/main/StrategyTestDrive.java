@@ -1,7 +1,5 @@
 package main;
 
-import java.util.Scanner;
-
 public class StrategyTestDrive {
 
 
@@ -16,30 +14,15 @@ public class StrategyTestDrive {
 		heartmodel=new HeartAdapter(HeartModel.getInstance());
 		heartmodel.initialize();
 		tempomodel=new TempoAdapter(TempoModel.getInstance());
-		StrategyController controller = new StrategyController(tempomodel);
+		StrategyController controller = new StrategyController(heartmodel);
+		
+		controller.addModel(tempomodel);
+		controller.addModel(beatmodel);
+		controller.addModel(heartmodel);
 
-		while(true){
-			Scanner scanner = new Scanner(System.in);
-			System.out.print("Enter a number");	
-			int modelo = scanner.nextInt();
-
-			switch(modelo){
-			case(1):
-				controller.changeModel(beatmodel);
-			break;
-			case(2):
-				controller.changeModel(heartmodel);
-			break;
-			case(3):
-				controller.changeModel(tempomodel);
-				break;
-			default:
-				break;
-			}
-
-		}
-	}	
+	}
+}	
 
 
 
-}
+
