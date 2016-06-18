@@ -1,10 +1,12 @@
 package main;
 
-public class StrategyTestDrive {
+public class StrategyTestDrive implements Runnable{
 
 
 
-	public static void main(String[] args) {
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
 		BeatModelInterface beatmodel;
 		BeatModelInterface heartmodel;
 		BeatModelInterface tempomodel;
@@ -19,7 +21,6 @@ public class StrategyTestDrive {
 		controller.addModel(tempomodel);
 		controller.addModel(beatmodel);
 		controller.addModel(heartmodel);
-
 	}
 }	
 

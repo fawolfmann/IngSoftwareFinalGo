@@ -14,6 +14,8 @@ public class StrategyController implements ControllerInterface{
 		this.model = model;
 		this.modelos = new ArrayList<BeatModelInterface>();
 		view = new StrategyView(this, this.model);
+		this.model.notifyBeatObservers();
+		this.model.notifyBPMObservers();
 	}
 
 	public void addModel(BeatModelInterface model){
@@ -65,5 +67,7 @@ public class StrategyController implements ControllerInterface{
 		default:
 			break;
 		}
+		this.model.notifyBeatObservers();
+		this.model.notifyBPMObservers();
 	}
 }

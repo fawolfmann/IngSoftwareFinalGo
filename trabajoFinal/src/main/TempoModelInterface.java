@@ -8,5 +8,7 @@ public interface TempoModelInterface  {
 	void removeObserver(BPMObserver o);
 	void registerObserver(TempoObserver o );
 	void mostrarPregunta(int pregunta);
-	
+	void notifyTEMPOObservers(String a);
+	void notifyBPMObservers();
+	void notifyBeatObservers();
 }

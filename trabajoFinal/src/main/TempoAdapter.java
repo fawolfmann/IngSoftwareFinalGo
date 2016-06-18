@@ -59,5 +59,17 @@ public class TempoAdapter implements BeatModelInterface {
 		// TODO Auto-generated method stub
 		temporizador.removeObserver(o);
 	}
+	
+	//Esto se modifico.
+	@Override
+	public void notifyBeatObservers() {
+		// TODO Auto-generated method stub
+		((TempoModelInterface)temporizador).notifyBeatObservers();
+	}
+	@Override
+	public void notifyBPMObservers() {
+		// TODO Auto-generated method stub
+		((TempoModelInterface)temporizador).notifyBPMObservers();
+	}
 
 }
