@@ -1,4 +1,19 @@
-﻿Version: V0.8
+﻿Version: V0.9
+Autor: Colazo Agustin
+Caracterisitcas Añadidas:
+
+-Caracteristica 1: Añadidos Unit Test
+-Caracteristica 2: Modificaciones menores en las clases: TempoModel y StrategyController.
+Errores Arreglados:
+
+
+Comentarios:
+Dependiendo de si Gradle corre los JUnit individualmente o en paralelo, algunos tests pueden fallar no por errores en el software.
+Sino porque estos se corren en paralelo.
+Estos JUnit que pueden fallar son: HeartModel_OneInstance, HeartModel_NoInstance, HeartModel_getCantInstances.
+En caso de que Gradle los ejecute conjuntamente y no individualmente, habra que eliminarlos.
+------------------------------------------------------------------------
+Version: V0.8
 Autor: Colazo Agustin
 Caracterisitcas Añadidas:
 Caracteristica 1: Se agrego un Strategy Controller y StrategyView. StrategyView hereda de DJView. Esto se hizo
