@@ -1,7 +1,6 @@
 package main;
 
 
-import java.io.FileInputStream;
 import java.util.ArrayList;
 
 import javax.sound.sampled.AudioInputStream;
@@ -9,9 +8,9 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
 public class TempoModel implements TempoModelInterface,Runnable{
-	ArrayList beatObservers = new ArrayList();
-	ArrayList bpmObservers = new ArrayList();
-	ArrayList tempoObservers = new ArrayList();
+	ArrayList<BeatObserver> beatObservers = new ArrayList<BeatObserver>();
+	ArrayList<BPMObserver> bpmObservers = new ArrayList<BPMObserver>();
+	ArrayList<TempoObserver> tempoObservers = new ArrayList<TempoObserver>();
 	String[] preguntas = new String[4];
 	String[] respuestas = new String[4];
 	public static TempoModel uniqueInstance=null;	
