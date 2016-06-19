@@ -50,6 +50,10 @@ public class StrategyController implements ControllerInterface{
 	public void setBPM(int bpm) {
 		model.setBPM(bpm);
 	}
+	public BeatModelInterface getModel(){
+		return this.model;
+	}
+	
 	public void changeModel(String modelo){
 		switch(modelo){
 		case ("Smart"):
