@@ -19,12 +19,12 @@ public class TempoModel implements TempoModelInterface,Runnable{
 	Thread thread;
 	private int respuesta = 0;
 	private TempoModel(){
-		
+
 		agregarPreguntas();
 		agregarRespuestas();
-	
+
 	}
-	
+
 	private void agregarPreguntas(){
 		preguntas[0]="El problema consiste en un hombre ciego, que debe tomar tres pastillas de distinto color por dia para vivr, estas son exactamente iguales al tacto y al olfato. El hombre tiene guardadas sus pantillas en frascos de 6, donde hay dos de cada color. \u00BFComo hace para no morir?";
 		preguntas[1]="Hay tres cajas, una contiene manzanas, otra naranjas y la otra tiene tanto naranjas como manzanas. El problema es que las etiquetas estan las 3 mal puestas. ¿Como podes etiquetar bien las cajas sacando una sola fruta y viendola?";
@@ -36,13 +36,13 @@ public class TempoModel implements TempoModelInterface,Runnable{
 		respuestas[1]="Como sabemos que todas las etiquetas estan cambiadas. Miramos la que tiene la etiqueta Mixta, sabremos que la caja corresponde a la fruta que saquemos ya que esta no puede ser la caja mixta. Luego, le ponemos la etiqueta correspondiente y a las otras dos cajas les intercambiamos las etiquetas restantes.";
 		respuestas[2]="Primero cruzan A y B, luego vuelve A con la antorcha. Cruzan C y D, y luego vuelve B con la antorcha. Finalmente, cruzan A y B.";
 		respuestas[3]="CONSULTAR";
-	
+
 	}
 	public static TempoModel getInstance(){
 		if (uniqueInstance==null){
 			uniqueInstance= new TempoModel();
 		}
-		
+
 		return uniqueInstance;
 	}
 	@Override
@@ -111,74 +111,84 @@ public class TempoModel implements TempoModelInterface,Runnable{
 			observer.updateBPM();
 		}
 	}
-	
+
 	public void notifyTEMPOObservers(String a) {
 		for(int i = 0; i < tempoObservers.size(); i++) {
 			TempoObserver observer = (TempoObserver)tempoObservers.get(i);
 			observer.updateTempo(a);
 		}
 	}
-	
+
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
 		while(SegundosActuales != 0){
 			switch(SegundosActuales){
 			case 10:
-					reproducir("/main/resources/sounds/10seconds.wav");
-					  
-					break;
+				reproducir("/main/resources/sounds/10seconds.wav");
+
+				break;
 			case 30:
-				
-					reproducir("/main/resources/sounds/30seconds.wav");
-					
-					break;
+
+				reproducir("/main/resources/sounds/30seconds.wav");
+
+				break;
 			case 5:
-					reproducir("/main/resources/sounds/5seconds.wav");
-				}
-			
-				try{	
-					Thread.sleep(1000);
-					SegundosActuales--;
-					notifyBeatObservers();
-					notifyBPMObservers();
-				}catch(Exception e){
-				}
-				
+				reproducir("/main/resources/sounds/5seconds.wav");
 			}
+
+			try{	
+				Thread.sleep(1000);
+				SegundosActuales--;
+				notifyBeatObservers();
+				notifyBPMObservers();
+			}catch(Exception e){
+			}
+
+		}
 		reproducir("/main/resources/sounds/begins.wav");
-		notifyTEMPOObservers(respuestas[respuesta]);
-		
+		notifyTEMPOObservers(getRespuesta(respuesta));
+
 		/*try{	
 			Thread.sleep(10000);
 			uniqueInstance = null;
 			TempoModel tempomodel = TempoModel.getInstance();
 	        ControllerInterface model = new TempoController(tempomodel);
-		
+
 		}catch(Exception e){
 		}
-		*/
-		}
+		 */
+	}
+	public String getRespuesta(int index){
+		return respuestas[index];
+	}
 	public void reproducir(String audioPath){
 		try
-		  {
-			  AudioInputStream audioInputStream =AudioSystem.getAudioInputStream(this.getClass().getResource(audioPath));
-			     Clip clip = AudioSystem.getClip();
-			     clip.open(audioInputStream);
-			     clip.start( );
-		  }
-		  catch (Exception e)
-		  {
-		    // a special way i'm handling logging in this application
-		   e.printStackTrace();
-		  }
-		
+		{
+			AudioInputStream audioInputStream =AudioSystem.getAudioInputStream(this.getClass().getResource(audioPath));
+			Clip clip = AudioSystem.getClip();
+			clip.open(audioInputStream);
+			clip.start( );
+		}
+		catch (Exception e)
+		{
+			// a special way i'm handling logging in this application
+			e.printStackTrace();
+		}
+
 	}
 
+
+	public String getPregunta(int index){
+		return preguntas[index];
+	}
 
 	@Override
 	public void mostrarPregunta(int pregunta) {
 		// TODO Auto-generated method stub
+		notifyTEMPOObservers(getPregunta(pregunta));
+		this.respuesta=pregunta;
+		/*
 		switch(pregunta){
 		case 0:
 			notifyTEMPOObservers(preguntas[pregunta]);
@@ -188,21 +198,22 @@ public class TempoModel implements TempoModelInterface,Runnable{
 			notifyTEMPOObservers(preguntas[pregunta]);
 			respuesta=pregunta;
 			break;
-		
+
 		case 2:
 			notifyTEMPOObservers(preguntas[pregunta]);
 			respuesta=pregunta;
 			break;
-			
+
 		case 3:
 			notifyTEMPOObservers(preguntas[pregunta]);
 			respuesta=pregunta;
 			break;
-		
+
 		}
-		
-	}
+		 */
 
 	}
+
+}
 
 
