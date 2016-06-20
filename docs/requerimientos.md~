@@ -20,19 +20,19 @@ Tambien se puede observar la correcta aplicacion del patron de arquitectura MVC 
 ###Especificacion de requerimientos
 #### Requerimiento funcionales:
 1. Requerimiento 1: Solo se pueda crear una instancia del modelo creado.
-	*Para esto se debe implemnetar una patron que solo deje instanciar una ves el modelo.
+	* Para esto se debe implemnetar una patron que solo deje instanciar una ves el modelo.
 2. Requerimiento 2: Puede que el producto reproduzca sonidos.
-	*Se puede utilizar librerias aplicadas para estas funcionalidades.
+	* Se puede utilizar librerias aplicadas para estas funcionalidades.
 3. Requerimiento 3: El producto debe tener un contador de tiempo
-	*Debe implentar del BeatBar entregado, sin modificarlo, hacer un temporizador.
+	* Debe implentar del BeatBar entregado, sin modificarlo, hacer un temporizador.
 4. Requerimiento 4: Se debe poder ejecutar varios modelos al mismo tiempo.
-	*Para este punto se debe implementar la interfaz de Runnable.
+	* Para este punto se debe implementar la interfaz de Runnable.
 5. Requerimiento 5: Se debe poder volver a empezar el juego cuando se finaliza una pregunta.
-	*Debe tener una implementacion para cuando termine una pregunta no finalice el juego.
+	* Debe tener una implementacion para cuando termine una pregunta no finalice el juego.
 6. Requerimiento 6: Se tiene que poder contar la cantidad de veces que se instancia la modelo del corazon.
-	*Dentro del BeatBar se tiene que poder ver la cantidad de veces instanciado o tratado de instanciar, sin modificar lo brindado.
+	* Dentro del BeatBar se tiene que poder ver la cantidad de veces instanciado o tratado de instanciar, sin modificar lo brindado.
 7. Requerimiento 7: El modelo debe proveer alguna forma de poder modificar las vistas en tiempo de ejecucion.
-	*Para este punto se puede utilizar patrones de diseno que puedan modificar cosas en tiempo de ejecucion.
+	* Para este punto se puede utilizar patrones de diseno que puedan modificar cosas en tiempo de ejecucion.
 
 
 
