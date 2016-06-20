@@ -13,7 +13,26 @@ Hay que tener los conceptos basico de Ingenieria en Software.
 ###Arquitectura del sistema
  Se detalla la arquitectura del programa con el grafico de arquitectura, se ve que es un tipo de arquitectura MVC con patrones Observer tambien aplicados, se puede ver las conexiones a las interfaces entre las clases creadas y las utilizadas.
 ![](/Diagramas/Arq.jpg) 
-###
-###Requisitos funcionales:
-	
+Aqui se puede ver la forma en que se re-utilizan las clases y patrones se aplican de nuevo, como el nuevo observer que se crea.
+Tambien se puede observar la correcta aplicacion del patron de arquitectura MVC a las nuevas clases creadas.
 
+###Especificacion de requerimientos
+####Requisitos funcionales:
+1. Requisito 1: Solo se pueda crear una instancia del modelo creado.
+2. Requisito 2: puede que el producto reproduzca sonidos.
+3. Requisito 3: El producto debe tener un contador de tiempo
+4. Requisito 4: se debe poder ejecutar varios modelos al mismo tiempo.
+5. Requisito 5: se debe poder volver a empezar el juego cuando se finaliza una pregunta.
+6. Requisito 6: se tiene que poder contar la cantidad de veces que se instancia la modelo del corazon.
+7. Requisito 7: el modelo debe proveer alguna forma de poder modificar las vistas en tiempo de ejecucion.
+
+
+
+####Requisitos no funcionales
+1. Eficiencia: no se detalla el nivel de eficiencia a nivel de espeacio ni desempeno, el producto no tiene limitaciones en este sentido.
+2. Usabilidad: se espera que con una o dos veces de uso el usuario pueda entender sin ninguna explicacion el funcionamiento del programa.
+3. Seguridad: la seguridad del producto se tiene que dar en la no modificacion del usuario al sistema.
+4. Confiabilidad: se espera que el producto no tenga mayor que un 20% de falla del sistema, se reanuda abriendo y cerrando el sistema.
+5. Velocidad: el sistema tendra una alta tasa de respuesta del sistema a un cambio, uno 3 segundos como maximo.
+6. Portabilidad: el producto contendra un solo ejecutable por lo que tiene que ser altamente protable y ejecutable en toda maquina con Java.
+7. Desarrollo: se debe codificar en lenguaje java, pudiendo utilizar la ultima version del java JDK java 8
