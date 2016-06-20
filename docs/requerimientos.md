@@ -7,9 +7,12 @@ Hay que tener los conceptos basico de Ingenieria en Software.
  1. Este programa debe ser para el divertimento o el desarrollo de la logica del usuario.
  2. El sistema proveera preguntas y respuesta al cabo de un tiempo.
  3. Se muestran los graficos de secuencia y de casos de uso para su mayor comprension.
-![](/Diagramas/Secuencia_usuario.jpg) 	En este diagrama se ve como un usuario tiene acceso al programa, la forma en que tiene que usarlo.
-![](/Diagramas/UseCase.jpg) 	En este diagrama se ven todos los casos de usos que puede tener un usuario al utilizar el sistema.
-![](/Diagramas/activity.jpg)	En este diagrama se puede ver las actividades que tiene que generar y poder verse del sistema.
+![](/Diagramas/Secuencia_usuario.jpg) 	
+En este diagrama se ve como un usuario tiene acceso al programa, la forma en que tiene que usarlo.
+![](/Diagramas/UseCase.jpg) 	
+En este diagrama se ven todos los casos de usos que puede tener un usuario al utilizar el sistema.
+![](/Diagramas/activity.jpg)	
+En este diagrama se puede ver las actividades que tiene que generar y poder verse del sistema.
 
 ###Arquitectura del sistema
  Se detalla la arquitectura del programa con el grafico de arquitectura, se ve que es un tipo de arquitectura MVC con patrones Observer tambien aplicados, se puede ver las conexiones a las interfaces entre las clases creadas y las utilizadas.
