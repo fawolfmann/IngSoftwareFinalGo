@@ -7,24 +7,40 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
 import java.awt.event.ActionEvent;
 
-public class Menu {
+public class Menu_juego {
 
-	private JFrame frame;
+	private static JFrame frame;
 	boolean entroHeartTest;
 	boolean entroDJTest;
 	boolean entroTempoTest;
 	boolean entroStrategyTest;
+	
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+			
+		
+				
 				try {
-					Menu window = new Menu();
+						
+					
+					Menu_juego window = new Menu_juego();
 					window.frame.setVisible(true);
+					
+					JLabel lblSeleccionadorDeModelo = new JLabel("Seleccionador de modelo");
+					lblSeleccionadorDeModelo.setFont(new Font("Tahoma", Font.PLAIN, 18));
+					lblSeleccionadorDeModelo.setBounds(100, 11, 231, 29);
+					frame.getContentPane().add(lblSeleccionadorDeModelo);
+					
+					
+					
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -35,7 +51,7 @@ public class Menu {
 	/**
 	 * Create the application.
 	 */
-	public Menu() {
+	public Menu_juego() {
 		entroHeartTest=false;
 		entroDJTest=false;
 		entroTempoTest=false;
@@ -52,10 +68,10 @@ public class Menu {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JLabel lblSeleccionadorDeModelo = new JLabel("Seleccionador de modelo");
+		/*JLabel lblSeleccionadorDeModelo = new JLabel("Seleccionador de modelo");
 		lblSeleccionadorDeModelo.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblSeleccionadorDeModelo.setBounds(100, 11, 231, 29);
-		frame.getContentPane().add(lblSeleccionadorDeModelo);
+		frame.getContentPane().add(lblSeleccionadorDeModelo);*/
 
 		JLabel lblSeleccioneElModelo = new JLabel("Seleccione el modelo.");
 		lblSeleccioneElModelo.setBounds(140, 121, 191, 14);
@@ -117,4 +133,6 @@ public class Menu {
 			
 		});
 	}
+
+	
 }

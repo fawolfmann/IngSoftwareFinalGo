@@ -1,0 +1,10 @@
+Instrucciones
+1-Abra el menu
+2-Haga click en el boton Strategy
+3-Haga click en el boton seleccionar modelo
+4-Seleccione modelo SMART
+5-Ingrese 10 segundos.
+
+Resultado Esperado:
+Que el tiempo sean 10 segundos y empiece la cuenta regresiva ademas deben escucharse tres sonidos a los 10, 5 y 0 segundos
+respectivamente

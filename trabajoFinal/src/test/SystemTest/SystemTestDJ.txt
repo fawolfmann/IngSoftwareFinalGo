@@ -1,0 +1,8 @@
+Instrucciones
+1-Abra el menu
+2-Haga click en el boton DJ
+3-Ingrese a la barra de menu de DJControl y haga click en start
+
+
+Resultado Esperado:
+Escuchar una percusion a 90BPM
