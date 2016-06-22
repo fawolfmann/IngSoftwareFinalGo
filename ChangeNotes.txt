@@ -1,4 +1,14 @@
 ﻿Version: V0.9
+Autor: Nicolas Passaglia
+Caracterisitcas Añadidas:
+
+-
+
+Errores Arreglados:
+1-El boton de set una vez que ya estaba instanciado el tiempo en SMART
+
+------------------------------------------------------------------------
+Version: V0.9
 Autor: Colazo Agustin
 Caracterisitcas Añadidas:
 
