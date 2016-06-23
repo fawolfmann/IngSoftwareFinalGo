@@ -1,0 +1,9 @@
+Instrucciones
+1-Se ejecuta el programa
+2-Haga click en el boton Corazon
+3-Haga click en la flecha hacia la derecha ">>"
+
+Resultado Esperado:
+En la DJView se espera ver los latidos del corazon el barra del beatbar y debajo el numero de veces que se intento
+instanciar el model, en este caso 2 veces.
+

@@ -54,10 +54,15 @@ public class TempoModel implements TempoModelInterface,Runnable{
 	@Override
 	public void setSegundos(int segundos) {
 		// TODO Auto-generated method stub
+		if(SegundosActuales == 0){
 		SegundosTotales = segundos;
 		SegundosActuales = SegundosTotales;
 		thread = new Thread(this);
 		thread.start();
+		}
+		else{
+			
+		}
 	}
 
 	@Override
