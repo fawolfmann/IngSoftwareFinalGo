@@ -13,11 +13,12 @@
 
 ##Pass/Fail Ratio del sistema
 Se utilizo la herramienta JaCoCo para ecplipse y esto muestra
-![](/Diagramas/pass-faillRatio.png) 
+![](/Diagramas/test-Final.png) 
 	
 ##Bugs Conocidos
 1. Se crean clases para mostrar logo pero no se pudo implementar de manera correcta, por eso no se integro al proyecto final.
-
+2. Se cierran todas las ventanas al cerrar una de ellas.
+3. Si esta en el BeatModel y se quiere setear sin ninguna entrada da error.
 
 ##Descarga ejecutable e intrucciones de ejecucion
 El sitio del ejecutable es: <https://github.com/fawolfmann/IngSoftwareFinalGo/tree/master/ejecutable>
@@ -115,13 +116,36 @@ En este diagrma se ve la forma en que un objeto crea a otro, o los objetos que s
 En este diagrama se ve las formas en que se agrupan las clases dentro del proyecto
 ![](/Diagramas/PackageDiagram1.jpg)
 
+###Implemetacion para modificar modelo en tiempo de ejecucion
+####Se utilizo el patron de diseno de Strategy para generar esta implentacion.
+Este patron nos permite cambiar en tiempo de ejecucion el modelo que mostramos en la vista StrategyView la cual extiende a DJView.
+![](/Diagramas/PackageDiagram1.jpg)
+
 -----------------------------------------------------------------------------------
 ***
 #Testing
+Se crearon tests para poder chequear que el producto este funcioncado correctamente, aunq los test se generaron al final del proyecto y tuvo que generarse nuevos metodos en las clases para el correcto testeo.
+####Test creados
+![](/Diagramas/test-final.png)
+En esta imagen se puede observar los test creados.
+####Ejemplo de Test
+![](/Diagramas/testEj1.png)
+En esta imagen se ve como se implementa unn  test, se tiene que setear algunas cosas para que el test sea automatizado.
+
+####Test de sistema
+El test del sistema como conjunto se genera a mano con las sigueintes instrucciones:
+1. Se ejecuta el programa
+2. Haga click en el boton Corazon
+3. Haga click en la flecha hacia la derecha ">>"
+
+######Resultado Esperado:
+En la DJView se espera ver los latidos del corazon 
+el barra del beatbar y debajo el numero de veces que se intento
+instanciar el model, en este caso 2 veces.
 
 ###Matriz de trazabilidad
-
-|Requerimiento	|Temporizador	|Iniciar Modelo	|Setear Tiempo	|Jugar	|Elegir Pregunta|Jugador|Sistema|
+En esta matriz se ve los requerimientos cumplidos contra los test hechos.
+|Requerimiento\Test|Temporizador|Iniciar Modelo	|Setear Tiempo	|Jugar	|Elegir Pregunta|Jugador|Sistema|
 |:------------:	|:------:	|:----:		|:----:		|:----:	|:----:		|:----:	|:-----:|
 |Unica Instancia|		|	X	|		|	|		|	|	|
 |Sonidos	|		|		|		|X	|		|	|	|
@@ -136,6 +160,8 @@ En este diagrama se ve las formas en que se agrupan las clases dentro del proyec
 |Setear Tiempo	|		|		|	X	|X	|		|	|	|
 |Jugar		|		|		|		|X	|	X	|X	|	|
 |Elegir Pregunta|		|		|		|X	|	X	|X	|	|
+
+
 
 -----------------------------------------------------------------------------------
 ***
