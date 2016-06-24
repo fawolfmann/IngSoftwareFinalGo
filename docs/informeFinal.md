@@ -146,7 +146,8 @@ instanciar el model, en este caso 2 veces.
 
 ###Matriz de trazabilidad
 En esta matriz se ve los requerimientos cumplidos contra los test hechos.
-|Requerimiento|Temporizador|Iniciar Modelo	|Setear Tiempo	|Jugar	|Elegir Pregunta|Jugador|Sistema|
+
+|Requerimiento\test|Temporizador|Iniciar Modelo	|Setear Tiempo	|Jugar	|Elegir Pregunta|Jugador|Sistema|
 |:------------:	|:------:	|:----:		|:----:		|:----:	|:----:		|:----:	|:-----:|
 |Unica Instancia|		|	X	|		|	|		|	|	|
 |Sonidos	|		|		|		|X	|		|	|	|
