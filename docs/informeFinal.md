@@ -20,7 +20,8 @@ Se utilizo la herramienta JaCoCo para ecplipse y esto muestra
 2. Se cierran todas las ventanas al cerrar una de ellas.
 3. Si esta en el BeatModel y se quiere setear sin ninguna entrada da error.
 
-##Descarga ejecutable e intrucciones de ejecucion
+##Descarga ejecutable e intrucciones de ejecucion 
+Version V1.0
 El sitio del ejecutable es: <https://github.com/fawolfmann/IngSoftwareFinalGo/tree/master/ejecutable>
 Aqui se puede descargar el ejecutbale de nuestro proyecto.
 Para ejecutarlo simplemente se debe clikear el .jar si esto no funciona se debe entrar en las propiedades y decir que es un ejecutable.
@@ -119,7 +120,7 @@ En este diagrama se ve las formas en que se agrupan las clases dentro del proyec
 ###Implemetacion para modificar modelo en tiempo de ejecucion
 ####Se utilizo el patron de diseno de Strategy para generar esta implentacion.
 Este patron nos permite cambiar en tiempo de ejecucion el modelo que mostramos en la vista StrategyView la cual extiende a DJView.
-![](/Diagramas/PackageDiagram1.jpg)
+![](/Diagramas/Clases-Strategy.jpg)
 
 -----------------------------------------------------------------------------------
 ***
@@ -145,7 +146,7 @@ instanciar el model, en este caso 2 veces.
 
 ###Matriz de trazabilidad
 En esta matriz se ve los requerimientos cumplidos contra los test hechos.
-|Requerimiento\Test|Temporizador|Iniciar Modelo	|Setear Tiempo	|Jugar	|Elegir Pregunta|Jugador|Sistema|
+|Requerimiento|Temporizador|Iniciar Modelo	|Setear Tiempo	|Jugar	|Elegir Pregunta|Jugador|Sistema|
 |:------------:	|:------:	|:----:		|:----:		|:----:	|:----:		|:----:	|:-----:|
 |Unica Instancia|		|	X	|		|	|		|	|	|
 |Sonidos	|		|		|		|X	|		|	|	|

@@ -17,7 +17,8 @@ Se utilizo la herramienta JaCoCo para ecplipse y esto muestra
 	
 ##Bugs Conocidos
 1. Se crean clases para mostrar logo pero no se pudo implementar de manera correcta, por eso no se integro al proyecto final.
-
+2. Se cierran todas las ventanas al cerrar una de ellas.
+3. Si esta en el BeatModel y se quiere setear sin ninguna entrada da error.
 
 ##Descarga ejecutable e intrucciones de ejecucion
 El sitio del ejecutable es: <https://github.com/fawolfmann/IngSoftwareFinalGo/tree/master/ejecutable>
